@@ -1,19 +1,10 @@
-import {
-  BsFacebook,
-  BsLinkedin,
-  BsMessenger,
-  BsShare,
-  BsSnapchat,
-  BsTwitterX,
-  BsWhatsapp,
-} from 'react-icons/bs';
-import { RiLink } from 'react-icons/ri';
+import { BsShare } from 'react-icons/bs';
 
-import { TfiEmail } from 'react-icons/tfi';
-
+import { useEffect, useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { IoFlagOutline } from 'react-icons/io5';
-import { useEffect, useState } from 'react';
+import { iconsSocialNetworks } from '../data/data';
+import { SocialNetworks } from './SocialNetworks';
 
 export const Swipe = ({ name, menuSwipe, setMenuSwipe }) => {
   const [widthSection, setWidthSection] = useState(window.innerWidth - 56);
@@ -55,61 +46,9 @@ export const Swipe = ({ name, menuSwipe, setMenuSwipe }) => {
         className='flex gap-4 items-center justify-start whitespace-nowrap overflow-y-hidden overflow-x-scroll pb-3 scroll__Styles md:justify-center'
         style={{ width: ` ${widthSection}px` }}
       >
-        <section className='flex flex-col gap-2 items-center'>
-          <div className='p-3 rounded-full border-[1px] border-gray-400'>
-            <RiLink size='24px' />
-          </div>
-          <p className='text-xs'>Copy link</p>
-        </section>
-        <section className='flex flex-col gap-2 items-center'>
-          <div className='p-3 rounded-full border-[1px] border-gray-400'>
-            <BsTwitterX size='24px' />
-          </div>
-          <p className='text-xs'>X</p>
-        </section>
-
-        <section className='flex flex-col gap-2 items-center'>
-          <div className='p-3 rounded-full border-[1px] border-gray-400'>
-            <BsFacebook size='24px' />
-          </div>
-          <p className='text-xs'>Facebook</p>
-        </section>
-
-        <section className='flex flex-col gap-2 items-center'>
-          <div className='p-3 rounded-full border-[1px] border-gray-400'>
-            <BsWhatsapp size='24px' />
-          </div>
-          <p className='text-xs'>WhatsApp</p>
-        </section>
-
-        <section className='flex flex-col gap-2 items-center'>
-          <div className='p-3 rounded-full border-[1px] border-gray-400'>
-            <BsLinkedin size='24px' />
-          </div>
-          <p className='text-xs'>LinkedIn</p>
-        </section>
-
-        <section className='flex flex-col gap-2 items-center'>
-          <div className='p-3 rounded-full border-[1px] border-gray-400'>
-            <BsMessenger size='24px' />
-          </div>
-          <p className='text-xs'>Messenger</p>
-        </section>
-
-        <section className='flex flex-col gap-2 items-center'>
-          <div className='p-3 rounded-full border-[1px] border-gray-400'>
-            <BsSnapchat size='24px' />
-          </div>
-          <p className='text-xs'>Snapchat</p>
-        </section>
-
-        <section className='flex flex-col gap-2 items-center'>
-          <div className='p-3 rounded-full border-[1px] border-gray-400'>
-            <TfiEmail size='24px' />
-          </div>
-          <p className='text-xs'>Email</p>
-        </section>
-
+        {iconsSocialNetworks.map((iconSocial, index) => (
+          <SocialNetworks key={index} {...iconSocial} />
+        ))}
         <section className='flex flex-col gap-2 items-center'>
           <div className='p-3 rounded-full border-[1px] border-gray-400'>
             <BsShare size='24px' />
