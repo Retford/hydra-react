@@ -1,8 +1,21 @@
 import { BsThreeDotsVertical } from 'react-icons/bs';
 
-export const Main = ({ name, menuSwipe, setMenuSwipe }) => {
+export const Main = ({
+  name,
+  url = '',
+  image = '',
+  subTitle = '',
+  text = '',
+  menuSwipe,
+  setMenuSwipe,
+}) => {
   const handleClick = () => {
-    setMenuSwipe(menuSwipe === name ? null : name);
+    // setMenuSwipe(menuSwipe === name ? null : name);
+    setMenuSwipe(
+      menuSwipe && menuSwipe.name === name
+        ? null
+        : { name, url, image, subTitle, text }
+    );
   };
 
   return (

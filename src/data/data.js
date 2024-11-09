@@ -11,9 +11,22 @@ import { RiLink } from 'react-icons/ri';
 import { TfiEmail } from 'react-icons/tfi';
 
 export const mainButtons = [
-  { name: 'Menu' },
-  { name: 'Our recipes' },
-  { name: 'Find Us' },
+  {
+    name: 'Menu',
+    image: '/Linktree.webp',
+    subTitle: 'Linktree: Link everything you are',
+    text: 'Linktree makes room for all of you. Get everything you create, curate and share, wherever it’s scattered online, and put it back together again in one place – your Linktree – where it can be discovered with ease.',
+  },
+  {
+    name: 'Our recipes',
+    url: 'www.youtube.com/watch?v=2Le29GzSz8I',
+  },
+  {
+    name: 'Find Us',
+    image: '/Linktree.webp',
+    subTitle: 'Linktree: Link everything you are',
+    text: 'Linktree makes room for all of you. Get everything you create, curate and share, wherever it’s scattered online, and put it back together again in one place – your Linktree – where it can be discovered with ease.',
+  },
 ];
 
 export const iconsSocialNetworks = [

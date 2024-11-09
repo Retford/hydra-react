@@ -13,10 +13,10 @@ function App() {
       <Header />
       <NavBar />
       <section className='flex flex-col items-center justify-center gap-4'>
-        {mainButtons.map(({ name }, i) => (
+        {mainButtons.map((mainButton, i) => (
           <Main
             key={i}
-            name={name}
+            {...mainButton}
             setMenuSwipe={setMenuSwipe}
             menuSwipe={menuSwipe}
           />
@@ -24,7 +24,11 @@ function App() {
       </section>
       {menuSwipe && (
         <Swipe
-          name={menuSwipe}
+          name={menuSwipe.name}
+          url={menuSwipe.url}
+          image={menuSwipe.image}
+          subTitle={menuSwipe.subTitle}
+          text={menuSwipe.text}
           setMenuSwipe={setMenuSwipe}
           menuSwipe={menuSwipe}
         />
