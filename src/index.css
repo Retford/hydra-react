@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .bg-image {
-  background-image: url('/download.webp');
+  background-image: url('/hydra-react/download.webp');
 }
 
 @media (max-width: 475px) {

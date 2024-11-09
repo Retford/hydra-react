@@ -31,7 +31,7 @@ export const Swipe = ({
   };
 
   return (
-    <section className='w-full h-screen fixed bg-[#00000099]'>
+    <section className='w-full h-screen fixed bg-[#00000099] z-10'>
       <section
         className='justify-center items-center flex-col gap-8 text-base text-black bg-white fixed bottom-0 w-full rounded-t-3xl pt-4'
         style={{ display: menuSwipe ? 'flex' : 'none' }}

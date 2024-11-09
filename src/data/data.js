@@ -14,7 +14,7 @@ export const mainButtons = [
   {
     name: 'Menu',
     videoId: 'xXB86WbaNMA',
-    image: '/Linktree.webp',
+    image: '/hydra-react/Linktree.webp',
     subTitle: 'Linktree: Link everything you are',
     text: 'Linktree makes room for all of you. Get everything you create, curate and share, wherever it’s scattered online, and put it back together again in one place – your Linktree – where it can be discovered with ease.',
   },
@@ -26,7 +26,7 @@ export const mainButtons = [
   {
     name: 'Find Us',
     videoId: 'J7SbRZNmc90',
-    image: '/Linktree.webp',
+    image: '/hydra-react/Linktree.webp',
     subTitle: 'Linktree: Link everything you are',
     text: 'Linktree makes room for all of you. Get everything you create, curate and share, wherever it’s scattered online, and put it back together again in one place – your Linktree – where it can be discovered with ease.',
   },
