@@ -7,6 +7,7 @@ import { mainButtons } from './data/data';
 
 function App() {
   const [menuSwipe, setMenuSwipe] = useState(null);
+  const [movie, setMovie] = useState(false);
 
   return (
     <section className='bg-image bg-no-repeat bg-center bg-cover h-screen flex flex-col justify-center items-center text-white !font-DMS gap-8'>
@@ -18,6 +19,8 @@ function App() {
             key={i}
             {...mainButton}
             setMenuSwipe={setMenuSwipe}
+            movie={movie}
+            setMovie={setMovie}
             menuSwipe={menuSwipe}
           />
         ))}

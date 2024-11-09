@@ -1,10 +1,9 @@
-import { BsShare } from 'react-icons/bs';
-
 import { useEffect, useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { IoFlagOutline } from 'react-icons/io5';
 import { iconsSocialNetworks } from '../data/data';
 import { SocialNetworks } from './SocialNetworks';
+import '@justinribeiro/lite-youtube';
 
 export const Swipe = ({
   name,
