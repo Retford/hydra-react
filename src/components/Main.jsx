@@ -1,4 +1,5 @@
 import { BsThreeDotsVertical } from 'react-icons/bs';
+import '@justinribeiro/lite-youtube';
 
 export const Main = ({
   name,
@@ -12,46 +13,32 @@ export const Main = ({
   movie,
   setMovie,
 }) => {
-  const handleClick = () => {
-    // setMenuSwipe(menuSwipe === name ? null : name);
-    setMenuSwipe(
-      menuSwipe && menuSwipe.name === name
-        ? null
-        : { name, url, image, subTitle, text, videoId }
+  const handleNameClick = () => {
+    setMovie((prev) =>
+      prev && movie.name === name ? null : { name, videoId }
     );
   };
 
-  const handleMovie = () => {
-    setMovie(!movie);
+  const handleMenuClick = () => {
+    setMenuSwipe(
+      menuSwipe && menuSwipe.name === name
+        ? null
+        : { name, url, image, subTitle, text }
+    );
   };
 
-  return name !== 'Our recipes' ? (
-    <section className='relative bg-white h-16 text-black text-base rounded-[30px] w-72 flex justify-center items-center border-2 border-white hover:border-white hover:bg-transparent hover:text-white'>
-      <a href='#'>{name}</a>
-      <button
-        onClick={handleClick}
-        className='absolute right-5 hover:bg-[#ffffff1a] rounded-full p-1'
-      >
-        <BsThreeDotsVertical />
-      </button>
-    </section>
-  ) : (
+  return (
     <>
       <section
         className='relative bg-white text-black text-base rounded-[30px] w-72 flex justify-center items-center border-2 border-white hover:border-white hover:bg-transparent hover:text-white duration-700'
-        style={{ height: movie ? '170px' : '64px' }}
+        style={{ height: movie && movie.name === name ? '170px' : '64px' }}
       >
-        {name !== 'Our recipes' ? (
-          <a href='#'>{name}</a>
-        ) : (
-          <a href='#' onClick={handleMovie}>
-            {name}
-          </a>
-        )}
-        {name === 'Our recipes' && movie === true && (
+        <a href='#' onClick={handleNameClick}>
+          {name}
+        </a>
+        {movie && movie.name === name && (
           <lite-youtube
-            // className='aspect-video p-0 absolute rounded-[30px] top-0 left-0 right-0 bottom-0 h-full'
-            videoid={videoId}
+            videoid={movie.videoId}
             style={{
               position: 'absolute',
               padding: 0,
@@ -63,15 +50,15 @@ export const Main = ({
           />
         )}
         <button
-          onClick={handleClick}
+          onClick={handleMenuClick}
           className='absolute right-5 hover:bg-[#ffffff1a] rounded-full p-1'
         >
           <BsThreeDotsVertical />
         </button>
       </section>
-      {movie && (
+      {movie && movie.name === name && (
         <button
-          onClick={handleMovie}
+          onClick={handleNameClick}
           className='flex justify-center items-center px-4 py-2 rounded-full border-2 border-solid border-transparent bg-white opacity-75 text-black hover:opacity-100 hover:duration-1000 duration-1000'
         >
           x
