@@ -1,8 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { IoFlagOutline } from 'react-icons/io5';
 import { iconsSocialNetworks } from '../data/data';
 import { SocialNetworks } from './SocialNetworks';
+
+const subscribe = (callback) => {
+  window.addEventListener('resize', callback);
+  return () => window.removeEventListener('resize', callback);
+};
+
+const getSnapshot = () => window.innerWidth - 56;
 
 export const Swipe = ({
   name,
@@ -13,18 +20,22 @@ export const Swipe = ({
   menuSwipe,
   setMenuSwipe,
 }) => {
-  const [widthSection, setWidthSection] = useState(window.innerWidth - 56);
+  // TODO: Utilizando useState y useEffect
+  // const [widthSection, setWidthSection] = useState(window.innerWidth - 56);
 
-  useEffect(() => {
-    const handleWidth = () => {
-      setWidthSection(window.innerWidth - 56);
-    };
+  // useEffect(() => {
+  //   const handleWidth = () => {
+  //     setWidthSection(window.innerWidth - 56);
+  //   };
 
-    window.addEventListener('resize', handleWidth);
-    return () => {
-      window.removeEventListener('resize', handleWidth);
-    };
-  }, []);
+  //   window.addEventListener('resize', handleWidth);
+  //   return () => {
+  //     window.removeEventListener('resize', handleWidth);
+  //   };
+  // }, []);
+
+  //TODO: Utilizando useSyncExternalStore
+  const widthSection = useSyncExternalStore(subscribe, getSnapshot);
 
   const handleClick = () => {
     setMenuSwipe(null);
